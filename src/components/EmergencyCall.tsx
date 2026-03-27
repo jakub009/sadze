@@ -16,7 +16,7 @@ const EmergencyCall = () => (
         />
       </svg>
     </span>
-    <span className="emergency-title">Pohotovostná linka</span>
+    <span className="emergency-title">RÝCHLY KONTAKT</span>
     <span className="emergency-number">+421 911 296 198</span>
   </a>
 );

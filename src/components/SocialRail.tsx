@@ -1,6 +1,6 @@
 const SocialRail = () => (
   <div className="social-rail" aria-label="Sociálne siete">
-    <a href="#" className="social-rail-whatsapp" aria-label="WhatsApp">
+    <a href="https://wa.me/+421911296198" className="social-rail-whatsapp" aria-label="WhatsApp">
       <svg viewBox="0 0 24 24" role="img" focusable="false">
         <circle cx="12" cy="12" r="10.5" fill="#25D366" />
         <path
@@ -9,7 +9,7 @@ const SocialRail = () => (
         />
       </svg>
     </a>
-    <a href="#" className="social-rail-instagram" aria-label="Instagram">
+    <a href="https://www.instagram.com/sadze.sk" className="social-rail-instagram" aria-label="Instagram">
       <svg viewBox="0 0 24 24" role="img" focusable="false">
         <defs>
           <linearGradient id="igGradient" x1="0" y1="0" x2="1" y2="1">
@@ -34,7 +34,7 @@ const SocialRail = () => (
         <circle cx="16.2" cy="7.8" r="1.1" fill="#ffffff" />
       </svg>
     </a>
-    <a href="#" aria-label="Facebook">
+    <a href="https://www.facebook.com/profile.php?id=61582015713387" aria-label="Facebook">
       <svg viewBox="0 0 24 24" role="img" focusable="false">
         <path
           d="M22.68 12c0-5.9-4.78-10.68-10.68-10.68S1.32 6.1 1.32 12c0 5.34 3.9 9.76 9 10.56v-7.47H7.62V12h2.7V9.8c0-2.66 1.58-4.14 4.02-4.14 1.17 0 2.4.2 2.4.2v2.64h-1.35c-1.33 0-1.74.83-1.74 1.68V12h2.96l-.47 3.09h-2.5v7.47c5.1-.8 9-5.22 9-10.56z"

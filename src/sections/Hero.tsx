@@ -1,12 +1,15 @@
 import type { CSSProperties } from "react";
 
-const heroFireImage =
-  "https://images.pexels.com/photos/11688879/pexels-photo-11688879.jpeg?cs=srgb&dl=pexels-vladimir-11688879.jpg&fm=jpg";
-const heroFloodImage =
-  "https://images.pexels.com/photos/18302377/pexels-photo-18302377.jpeg?cs=srgb&dl=pexels-ehma-18302377.jpg&fm=jpg";
+import heroFireImage from "../public/fireman-fire-fighting-evacuation-fire-drill-simulation-training-safety-condominium-factory.jpg";
+import heroFloodImage from "../public/natural-disaster.jpg";
 
 const Hero = () => {
-  const headline = "Rýchly zásah po požiari aj vytopení";
+  const headlineLines = [
+    ["Rýchle"],
+    ["zásahy", "po", "požiari"],
+    ["aj", "vytopení"],
+  ];
+  const headline = headlineLines.flat().join(" ");
 
   return (
     <section
@@ -24,31 +27,47 @@ const Hero = () => {
       </div>
       <div className="container hero-grid">
         <div className="hero-copy" data-reveal>
-          <p className="eyebrow">Služby po požiary a po vytopení</p>
           <h1 className="hero-title" aria-label={headline}>
             <span className="hero-title-ghost" aria-hidden="true">
-              {headline}
+              {headlineLines.map((line, lineIndex) => (
+                <span className="hero-title-line" key={`ghost-line-${lineIndex}`}>
+                  {line.map((word, wordIndex) => (
+                    <span
+                      className="hero-title-word"
+                      key={`ghost-word-${lineIndex}-${wordIndex}`}
+                    >
+                      {word}
+                    </span>
+                  ))}
+                </span>
+              ))}
             </span>
             <span className="hero-title-text" aria-hidden="true">
               {(() => {
-                const words = headline.split(" ");
                 let globalIndex = 0;
 
-                return words.map((word, wordIndex) => (
-                  <span className="hero-title-word" key={`word-${wordIndex}`}>
-                    {Array.from(word).map((char, charIndex) => {
-                      const delay = globalIndex * 0.04;
-                      globalIndex += 1;
-                      return (
-                        <span
-                          className="hero-title-letter"
-                          style={{ animationDelay: `${delay}s` }}
-                          key={`char-${wordIndex}-${charIndex}`}
-                        >
-                          {char}
-                        </span>
-                      );
-                    })}
+                return headlineLines.map((line, lineIndex) => (
+                  <span className="hero-title-line" key={`line-${lineIndex}`}>
+                    {line.map((word, wordIndex) => (
+                      <span
+                        className="hero-title-word"
+                        key={`word-${lineIndex}-${wordIndex}`}
+                      >
+                        {Array.from(word).map((char, charIndex) => {
+                          const delay = globalIndex * 0.04;
+                          globalIndex += 1;
+                          return (
+                            <span
+                              className="hero-title-letter"
+                              style={{ animationDelay: `${delay}s` }}
+                              key={`char-${lineIndex}-${wordIndex}-${charIndex}`}
+                            >
+                              {char}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    ))}
                   </span>
                 ));
               })()}

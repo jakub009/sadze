@@ -53,6 +53,7 @@ const AdminDashboard = () => {
       href: "/quotes.html",
       count: loadFiles("sadze_quotes").length,
       label: "ponúk",
+      theme: "amber",
     },
     {
       title: "Faktúry",
@@ -60,6 +61,7 @@ const AdminDashboard = () => {
       href: "/invoices.html",
       count: loadFiles("sadze_invoices").length,
       label: "faktúr",
+      theme: "green",
     },
     {
       title: "Foto galéria",
@@ -67,6 +69,7 @@ const AdminDashboard = () => {
       href: "/photos.html",
       count: loadFiles("sadze_photos").length,
       label: "fotiek",
+      theme: "blue",
     },
     {
       title: "Tlačivá",
@@ -74,6 +77,7 @@ const AdminDashboard = () => {
       href: "/forms.html",
       count: loadFiles("sadze_forms").length,
       label: "tlačív",
+      theme: "violet",
     },
   ];
 
@@ -84,6 +88,7 @@ const AdminDashboard = () => {
       href: "/permissions.html",
       count: users.length,
       label: "používateľov",
+      theme: "rose",
     });
   }
 
@@ -123,7 +128,11 @@ const AdminDashboard = () => {
       </div>
       <div className="admin-dashboard-grid">
         {cards.map((card) => (
-          <a key={card.title} className="dashboard-tile" href={card.href}>
+          <a
+            key={card.title}
+            className={`dashboard-tile dashboard-tile--${card.theme}`}
+            href={card.href}
+          >
             <div>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
@@ -191,7 +200,26 @@ const FileVault = ({
   return (
     <section className="admin-card">
       <div className="admin-card-head">
-        <h2>{title}</h2>
+        <div className="admin-card-head-left">
+          <a
+            className="icon-button icon-button--circle admin-back"
+            href="/admin.html"
+            aria-label="Späť na dashboard"
+            title="Späť"
+          >
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                d="M15 18l-6-6 6-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+          <h2>{title}</h2>
+        </div>
         <label className="upload-button">
           Nahrať súbor
           <input type="file" multiple onChange={handleUpload} accept={accept} />
@@ -295,7 +323,26 @@ const InvoicePage = () => {
   return (
     <section className="admin-card">
       <div className="admin-card-head">
-        <h2>Faktúra (šablóna)</h2>
+        <div className="admin-card-head-left">
+          <a
+            className="icon-button icon-button--circle admin-back"
+            href="/admin.html"
+            aria-label="Späť na dashboard"
+            title="Späť"
+          >
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                d="M15 18l-6-6 6-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+          <h2>Faktúra (šablóna)</h2>
+        </div>
         <button className="button" type="button" onClick={generatePdf}>
           Stiahnuť PDF
         </button>
@@ -418,7 +465,26 @@ const PermissionsPage = () => {
   return (
     <section className="admin-card">
       <div className="admin-card-head">
-        <h2>Oprávnenia</h2>
+        <div className="admin-card-head-left">
+          <a
+            className="icon-button icon-button--circle admin-back"
+            href="/admin.html"
+            aria-label="Späť na dashboard"
+            title="Späť"
+          >
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                d="M15 18l-6-6 6-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+          <h2>Oprávnenia</h2>
+        </div>
       </div>
       <form className="permissions-form" onSubmit={handleCreate}>
         <label>

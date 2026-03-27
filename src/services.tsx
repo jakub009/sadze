@@ -126,7 +126,7 @@ const ServicePage = ({ page }: { page: ServiceKey }) => {
               </ul>
             </div>
             <div className="service-card">
-              <h2>Ako prebieha zásah</h2>
+              <h2>Ako prebieha sanácia</h2>
               <ol>
                 {content.steps.map((step) => (
                   <li key={step}>{step}</li>

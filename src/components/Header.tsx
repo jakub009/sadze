@@ -40,10 +40,6 @@ const Header = () => {
           <img src="/sadziebiela.png" alt="SADZE logo" />
           <span className="logo-text">SADZE.SK</span>
         </a>
-        <div className="mobile-contact">
-          <a href="tel:+421911296198">+421 911 296 198</a>
-          <a href="mailto:info@sadze.sk">info@sadze.sk</a>
-        </div>
         <button
           className="mobile-toggle"
           type="button"
@@ -77,6 +73,10 @@ const Header = () => {
             <a href="/#galeria">Galéria</a>
             <a href="/#kontakt">Kontakt</a>
           </nav>
+          <div className="header-mobile-contact">
+            <a href="tel:+421911296198">+421 911 296 198</a>
+            <a href="mailto:sadzesk@centrum.sk">sadzesk@centrum.sk</a>
+          </div>
           <div className="header-actions">
             {!user ? (
               <button

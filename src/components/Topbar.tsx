@@ -39,7 +39,7 @@ const Topbar = () => (
           </svg>
         </span>
         <div className="topbar-content">
-          <a href="mailto:info@sadze.sk">info@sadze.sk</a>
+          <a href="mailto:sadzesk@centrum.sk">sadzesk@centrum.sk</a>
         </div>
       </div>
     </div>

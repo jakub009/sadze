@@ -1,28 +1,40 @@
 import { useEffect, useMemo, useState } from "react";
-import newGalleryImage from "../public/Gemini_Generated_Image_5u11w85u11w85u11.png";
-import newGalleryImage2 from "../public/Gemini_Generated_Image_xlzguyxlzguyxlzg.png";
-import newGalleryImage3 from "../public/Gemini_Generated_Image_v0f4eyv0f4eyv0f4.png";
+import newGalleryImage from "../public/chodba.png";
+import newGalleryImage2 from "../public/kuchyna.png";
+import newGalleryImage3 from "../public/vaňa.png";
+import newGalleryImage4 from "../public/pivnica.png";
+import newGalleryImage5 from "../public/terasa.png";
+import newGalleryImage6 from "../public/wc.png";
+import newGalleryImage7 from "../public/odpad.png";
+import newGalleryImage8 from "../public/pracovneplošiny.png";
+
 
 const Gallery = () => {
   const items = useMemo(
     () => [
       {
         src: newGalleryImage,
-        alt: "Zásah po požiari",
-        location: "Administratívna budova, Žilina",
-        subtitle: "Kompletné čistenie a stabilizácia priestoru po požiari.",
       },
       {
         src: newGalleryImage2,
-        alt: "Sanácia po požiari",
-        location: "Bytový dom, Trenčín",
-        subtitle: "Odstránenie sadzí a dezinfekcia spoločných priestorov.",
       },
       {
         src: newGalleryImage3,
-        alt: "Sanácia po požiari",
-        location: "Rodinný dom, Banská Bystrica",
-        subtitle: "Stabilizácia priestoru a čistenie po požiari.",
+      },
+      {
+        src: newGalleryImage4,
+      },
+      {
+        src: newGalleryImage5,
+      },
+      {
+        src: newGalleryImage6,
+      },
+      {
+        src: newGalleryImage7,
+      },
+      {
+        src: newGalleryImage8,
       },
     ],
     []
@@ -100,30 +112,14 @@ const Gallery = () => {
           <h2>Galéria zásahov</h2>
           <p>Ukážky situácií, ktoré vieme stabilizovať, vyčistiť a obnoviť.</p>
         </div>
-        <div className="gallery-shape-texts" data-reveal>
-          <div className="gallery-shape-text gallery-shape-text--large">
-            <span className="gallery-shape-title">Najčastejšie zásahy</span>
-            <ul>
-              <li>Sanácia sadzí a zápachu</li>
-              <li>Odsávanie vody a sušenie</li>
-              <li>Dezinfekcia a obnova</li>
-            </ul>
-          </div>
-          <div className="gallery-shape-text gallery-shape-text--small">
-            <span className="gallery-shape-title">Rýchle kroky</span>
-            <ol>
-              <li>Kontaktujte nás</li>
-              <li>Prídeme na obhliadku</li>
-              <li>Začneme zásah</li>
-            </ol>
-          </div>
-        </div>
         <div className="gallery-slider gallery-slider--hero" data-reveal>
           <button
             className="gallery-arrow gallery-arrow--prev"
             type="button"
             aria-label="Predchádzajúce obrázky"
             onClick={goPrev}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             disabled={totalSlides <= 1}
           >
             <span aria-hidden="true">&larr;</span>
@@ -149,16 +145,9 @@ const Gallery = () => {
                   <img
                     className="gallery-hero-image"
                     src={item.src}
-                    alt={item.alt}
+                    alt=""
                     loading="lazy"
                   />
-                  <div className="gallery-hero-overlay">
-                    <span className="gallery-hero-label">
-                      Reálne miesto zásahu
-                    </span>
-                    <h3 className="gallery-hero-title">{item.location}</h3>
-                    <p className="gallery-hero-subtitle">{item.subtitle}</p>
-                  </div>
                 </div>
               ))}
             </div>
@@ -168,6 +157,8 @@ const Gallery = () => {
             type="button"
             aria-label="Nasledujúce obrázky"
             onClick={goNext}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             disabled={totalSlides <= 1}
           >
             <span aria-hidden="true">&rarr;</span>

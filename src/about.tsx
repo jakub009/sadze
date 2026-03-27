@@ -15,7 +15,7 @@ import processContactImage from "./public/process-contact.jpg";
 import processInspectionImage from "./public/process-inspection.jpg";
 import processSanitationImage from "./public/31931F7A-E30F-413A-BBDB-ED811DCF0F17.png";
 import processControlImage from "./public/workers-cleaning-chairs-with-disinfectants-cinema.jpg";
-import sootRemovalImage from "./public/Gemini_Generated_Image_vovh0ivovh0ivovh.png";
+import sootRemovalImage from "./public/WhatsApp Image 2026-03-21 at 12.44.05 (6).jpeg";
 import ozoneImage from "./public/cistenie-ozonom_ozonovanie-po-poziari.jpg";
 import hepaImage from "./public/workers-cleaning-chairs-with-disinfectants-cinema.jpg";
 import insurancePhotoImage from "./public/insurance-photo.jpg";
@@ -42,7 +42,6 @@ const AboutPage = () => {
           }
         >
           <div className="container about-hero-inner">
-            <p className="eyebrow">O nás</p>
             <h1>Odborné zásahy po požiari a vytopení</h1>
             <p className="about-hero-subtitle">
               Našou úlohou je stabilizovať situáciu, ochrániť majetok a pripraviť
@@ -115,7 +114,7 @@ const AboutPage = () => {
         >
           <div className="container">
             <div className="section-head">
-              <h2>Postup zásahu</h2>
+              <h2>Postup po škodovej udalosti</h2>
               <p>Od prvého kontaktu po odovzdanie priestoru.</p>
             </div>
             <div className="process-grid">

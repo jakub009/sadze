@@ -50,7 +50,7 @@ const Contact = () => {
       <section className="about-insurance" id="poistovne">
         <div className="container">
           <div className="section-head section-head--center">
-            <h2>Spolupráca s poisťovňami</h2>
+            <h2>Zabezpečujeme konzultáciu s poisťovňami</h2>
             <p>
               Zabezpečíme podklady, fotodokumentáciu a výkazy pre rýchle
               vybavenie poistnej udalosti.
@@ -119,7 +119,7 @@ const Contact = () => {
               </div>
               <div>
                 <span>Email</span>
-                <strong>info@sadze.sk</strong>
+                <strong>sadzesk@centrum.sk</strong>
               </div>
               <div>
                 <span>Dispečing</span>
@@ -137,4 +137,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
