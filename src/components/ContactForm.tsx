@@ -164,7 +164,7 @@ const ContactForm = () => {
         <textarea
           name="message"
           rows={5}
-          placeholder="Stručne opíšte, čo sa stalo a v akom je to stave..."
+          placeholder="Napíšte nám, čo sa stalo a v akom je to stave..."
           required></textarea>
       </label>
       <div className="form-actions">
