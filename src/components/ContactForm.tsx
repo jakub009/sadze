@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import emailjs from "@emailjs/browser";
-import {
-  EMAILJS_PUBLIC_KEY,
-  EMAILJS_SERVICE_ID,
-  EMAILJS_TEMPLATE_ID,
-  EMAILJS_IS_CONFIGURED,
-} from "../config/emailjs";
+import { FORMSPREE_ENDPOINT, FORMSPREE_IS_CONFIGURED } from "../config/formspree";
 
 type StatusTone = "idle" | "sending" | "success" | "error";
 
@@ -36,12 +30,6 @@ const ContactForm = () => {
   );
 
   useEffect(() => {
-    if (EMAILJS_IS_CONFIGURED) {
-      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-    }
-  }, []);
-
-  useEffect(() => {
     return () => {
       if (successTimerRef.current) {
         window.clearTimeout(successTimerRef.current);
@@ -53,9 +41,9 @@ const ContactForm = () => {
     event.preventDefault();
     setHasSubmitted(true);
 
-    if (!EMAILJS_IS_CONFIGURED) {
+    if (!FORMSPREE_IS_CONFIGURED) {
       setStatus({
-        message: "EmailJS ešte nie je nastavené. Doplňte údaje v src/config/emailjs.ts.",
+        message: "Formspree ešte nie je nastavené. Doplňte URL v src/config/formspree.ts.",
         tone: "error",
       });
       return;
@@ -73,7 +61,23 @@ const ContactForm = () => {
     setStatus({ message: "Odosielam...", tone: "sending" });
 
     try {
-      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current);
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(formRef.current),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        const errorMessage =
+          data && typeof data === "object" && "error" in data
+            ? String((data as { error?: string }).error)
+            : null;
+        throw new Error(errorMessage ?? "Odoslanie zlyhalo.");
+      }
+
       setStatus({ message: "", tone: "success" });
       formRef.current.reset();
       setInsurerName("");
@@ -87,8 +91,12 @@ const ContactForm = () => {
         setShowSuccess(false);
       }, 10000);
     } catch (error) {
+      const detailedMessage =
+        error instanceof Error ? error.message : null;
       setStatus({
-        message: "Odoslanie zlyhalo. Skontrolujte nastavenie EmailJS alebo skúste znova.",
+        message:
+          detailedMessage ??
+          "Odoslanie zlyhalo. Skontrolujte nastavenie Formspree alebo skúste znova.",
         tone: "error",
       });
       // eslint-disable-next-line no-console
