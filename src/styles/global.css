@@ -68,6 +68,23 @@ a {
   text-decoration: none;
 }
 
+.link-accent {
+  color: #2261c7;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.link-accent:hover,
+.link-accent:focus-visible {
+  text-decoration: underline;
+  color: #2261c7;
+}
+
+.text-red {
+  color: #d92d20 !important;
+}
+
 img {
   width: 100%;
   display: block;
@@ -96,7 +113,7 @@ img {
   gap: 18px;
   justify-content: space-between;
   padding: 10px 0;
-  color: var(--blue-900);
+  color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -380,14 +397,6 @@ img {
     max-width: 720px;
   }
 
-  .footer-brand-contact {
-    margin-left: 410px;
-    margin-top: -30px;
-  }
-
-  .footer-stack {
-    margin-left: 250px;
-  }
 }
 
 .main-nav a {
@@ -781,6 +790,10 @@ img {
 }
 
 .hero {
+  --blue-ink: #0b1b3b;
+  --blue-ink-rgb: 11, 27, 59;
+  --blue-900: #0b1b3b;
+  --blue-800: #16306a;
   position: relative;
   min-height: calc(100vh - 480px);
   display: flex;
@@ -2803,16 +2816,19 @@ textarea:focus {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 32px;
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(0, 0.9fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  gap: 36px;
   align-items: start;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding-bottom: 20px;
 }
 
 .footer-brand {
-  max-width: 360px;
-  align-self: center;
+  align-self: start;
 }
 
 .footer-logo {
@@ -2831,20 +2847,9 @@ textarea:focus {
   width: auto;
 }
 
-.footer-brand-details {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 18px;
-  align-items: start;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
 .footer-brand-ids {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  gap: 6px;
 }
 
 .footer-brand-ids span {
@@ -2863,7 +2868,16 @@ textarea:focus {
 .footer-brand-contact {
   display: grid;
   gap: 6px;
-  transform: translateX(-20px);
+}
+
+.footer-brand-address {
+  display: grid;
+  gap: 6px;
+}
+
+.footer-brand-address-lines {
+  display: grid;
+  gap: 6px;
 }
 
 .footer-brand-label {
@@ -2992,6 +3006,9 @@ textarea:focus {
 .footer-col {
   display: grid;
   gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .footer-stack {
@@ -3310,6 +3327,10 @@ textarea:focus {
 
   .hero-copy h1 {
     font-size: clamp(2.4rem, 9vw, 3.2rem);
+  }
+
+  .hero-copy {
+    text-align: center;
   }
 
   .hero-grid {

@@ -33,12 +33,12 @@ const Contact = () => {
         rating: 5,
       },
       {
-        name: "Marek S.",
-        location: "Pezinok",
+        name: "Zoltan S.",
+        location: "Nové Zámky",
         service: "Požiar garáže",
         detail:
-          "Technika prišla načas, dve návštevy kvôli dočisteniu a kontrole.",
-        result: "Garáž bola použiteľná o pár dní, dostal som aj protokol.",
+          "Dohodnutá cena platila",
+        result: "Garáž bola použiteľná o dva den.",
         rating: 4,
       },
     ],
@@ -108,9 +108,9 @@ const Contact = () => {
               <h2>Kontakt</h2>
             </div>
             <div className="contact-chips" aria-label="Typ zásahu">
-              <span>Požiar</span>
-              <span>Sadzové čistenie</span>
-              <span>Odvlhčenie</span>
+              <span>Obhliadka </span>
+              <span>Cenová ponuka</span>
+              <span>Realizácia</span>
             </div>
             <div className="contact-details">
               <div>
@@ -122,8 +122,8 @@ const Contact = () => {
                 <strong>sadzesk@centrum.sk</strong>
               </div>
               <div>
-                <span>Dispečing</span>
-                <strong>Okamžitý zásah</strong>
+                <span>Dostupnosť</span>
+                <strong>Nonstop 24/7</strong>
               </div>
             </div>
           </div>

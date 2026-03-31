@@ -6,21 +6,32 @@ const Footer = () => (
           <img src="/sadziebiela.png" alt="SADZE logo" />
           <span>SADZE.SK</span>
         </div>
-        <div className="footer-brand-details">
-          <div className="footer-brand-ids">
-            <span>IČO: 47635274</span>
-            <span>DIČ: 2024074635</span>
+        <div className="footer-brand-address">
+          <span className="footer-brand-label">Sídlo</span>
+          <div className="footer-brand-address-lines">
+            <span>For All s.r.o.</span>
+            <span>Cukrovarská 146/5</span>
+            <span>926 01 Sereď</span>
           </div>
-          <div className="footer-brand-contact">
-            <span className="footer-brand-label">Kontakt</span>
-            <div className="footer-brand-contact-links">
-              <a className="footer-brand-link" href="tel:+421911296198">
-                +421 911 296 198
-              </a>
-              <a className="footer-brand-link" href="mailto:sadzesk@centrum.sk">
-                sadzesk@centrum.sk
-              </a>
-            </div>
+        </div>
+      </div>
+      <div className="footer-col footer-ids">
+        <div className="footer-brand-ids">
+          <span>IČO: 47635274</span>
+          <span>DIČ: 2024074635</span>
+          <span>IČ DPH: SK2024074635</span>
+        </div>
+      </div>
+      <div className="footer-col footer-contact">
+        <div className="footer-brand-contact">
+          <span className="footer-brand-label">Kontakt</span>
+          <div className="footer-brand-contact-links">
+            <a className="footer-brand-link" href="tel:+421911296198">
+              +421 911 296 198
+            </a>
+            <a className="footer-brand-link" href="mailto:sadzesk@centrum.sk">
+              sadzesk@centrum.sk
+            </a>
           </div>
         </div>
       </div>

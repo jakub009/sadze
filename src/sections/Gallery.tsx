@@ -109,8 +109,8 @@ const Gallery = () => {
     <section className="gallery" id="galeria">
       <div className="container">
         <div className="section-head section-head--center" data-reveal>
-          <h2>Galéria zásahov</h2>
-          <p>Ukážky situácií, ktoré vieme stabilizovať, vyčistiť a obnoviť.</p>
+          <h2>Galéria realizácií</h2>
+          <p>Ukážky zásahov a služieb, ktoré vieme zrealizovať.</p>
         </div>
         <div className="gallery-slider gallery-slider--hero" data-reveal>
           <button

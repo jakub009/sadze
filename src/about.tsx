@@ -44,13 +44,20 @@ const AboutPage = () => {
           <div className="container about-hero-inner">
             <h1>Odborné zásahy po požiari a vytopení</h1>
             <p className="about-hero-subtitle">
-              Našou úlohou je stabilizovať situáciu, ochrániť majetok a pripraviť
-              priestor na obnovu. Všetko s dôrazom na bezpečnosť, presný postup
-              a transparentnú komunikáciu.
+              Našou úlohou je kvalitná, rýchla a cenovo výhodná realizácia.
+               Všetko s dôrazom na bezpečnosť, presný postup
+              a transparentnú komunikáciu. Sme členom <a
+                                                               className="link-accent"
+                                                               href="https://verejnyportal.sksi.sk/search/profile/16517"
+                                                               target="_blank"
+                                                               rel="noreferrer"
+                                                             >
+                                                                SKSI
+                                                             </a>.
             </p>
             <div className="about-hero-actions">
               <a className="button" href="/#kontakt">
-                Objednať zásah
+                Nezáväzná obhliadka
               </a>
               <a className="button button-ghost" href="tel:+421911296198">
                 Zavolať 24/7
@@ -96,7 +103,7 @@ const AboutPage = () => {
                 <div className="value-card-media">
                   <img src={hepaImage} alt="HEPA filtrácia a dekontaminácia sadzí" loading="lazy" />
                 </div>
-                <h3>HEPA filtrácia</h3>
+                <h3>Dekontaminácia</h3>
                 <p>Dekontaminácia sadzí a prachových častíc z prostredia.</p>
               </div>
             </div>
@@ -184,21 +191,25 @@ const AboutPage = () => {
         >
           <div className="container">
             <div className="section-head">
-              <h2>Poistenie</h2>
+              <h2>Ste poistený, alebo nie?</h2>
               <p>Pomôžeme s podkladmi a komunikáciou pri poistnej udalosti.</p>
             </div>
             <div className="values-grid">
               <div className="value-card value-card--photo">
-                <div className="value-card-media">
-                  <img
-                    src={insuranceDocsImage}
-                    alt="Podklady a protokoly pre poisťovňu"
-                    loading="lazy"
-                  />
-                </div>
-                <h3>Podklady pre poisťovňu</h3>
-                <p>Výkazy, záznamy a protokoly podľa požiadaviek.</p>
-              </div>
+                              <div className="value-card-media">
+                                <img
+                                  src={coordinationImage}
+                                  alt="Koordinácia obhliadky a komunikácia"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <h3 className="text-red">
+                                Bezkonkurenčná cena k rozsahu prác
+                              </h3>
+                              <p className="text-red">
+                                Nezabudnite, vy si vyberáte!
+                              </p>
+                            </div>
               <div className="value-card value-card--photo">
                 <div className="value-card-media">
                   <img
@@ -210,17 +221,19 @@ const AboutPage = () => {
                 <h3>Fotodokumentácia</h3>
                 <p>Jasný stav pred, počas a po zásahu.</p>
               </div>
+
+
               <div className="value-card value-card--photo">
-                <div className="value-card-media">
-                  <img
-                    src={coordinationImage}
-                    alt="Koordinácia obhliadky a komunikácia"
-                    loading="lazy"
-                  />
-                </div>
-                <h3>Koordinácia obhliadky</h3>
-                <p>Spolupráca s likvidátorom a rýchle dohodnutie termínu.</p>
-              </div>
+                              <div className="value-card-media">
+                                <img
+                                  src={insuranceDocsImage}
+                                  alt="Podklady a protokoly pre poisťovňu"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <h3>Podklady pre poisťovňu</h3>
+                              <p>Záznamy a protokoly podľa požiadaviek.</p>
+                            </div>
             </div>
           </div>
         </section>
