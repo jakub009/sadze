@@ -42,15 +42,14 @@ const contentMap: Record<ServiceKey, ServiceContent> = {
           "Sanácia, dekontaminácia povrchov, zariadení a technológií",
           "Rekonštrukciu podľa vaších predstáv.",
           <>
-                  Kvalitné zhotovenie práce pod dohľadom{" "}
-                  <a
-                    className="link-accent"
-                    href="https://verejnyportal.sksi.sk/search/profile/16517"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    odborného pracovníka
-                  </a>
+                  Odborné <a
+                                                                                 className="link-accent"
+                                                                                 href="https://verejnyportal.sksi.sk/search/profile/16517"
+                                                                                 target="_blank"
+                                                                                 rel="noreferrer"
+                                                                               >
+                                                                                  riadenie a kontrola
+                                                                               </a>
                   .
                 </>,
           "Kontrola, odovzdanie a odporúčania k obnove.",
@@ -86,15 +85,14 @@ const contentMap: Record<ServiceKey, ServiceContent> = {
       "Po potvrdení objednávky rýchly nástup na realizáciu.",
       "Komunikácia s klientom, poistovňou v priebehu sanácie, dekontaminácie a rekonštrukcie.",
       <>
-        Kvalitné zhotovenie práce pod dohľadom{" "}
-        <a
-          className="link-accent"
-          href="https://verejnyportal.sksi.sk/search/profile/16517"
-          target="_blank"
-          rel="noreferrer"
-        >
-          odborného pracovníka
-        </a>
+        Odborné <a
+                                                                                         className="link-accent"
+                                                                                         href="https://verejnyportal.sksi.sk/search/profile/16517"
+                                                                                         target="_blank"
+                                                                                         rel="noreferrer"
+                                                                                       >
+                                                                                           riadenie a kontrola
+                                                                                       </a>
         .
       </>,
       "Protokolárne ukončenie zákazky."

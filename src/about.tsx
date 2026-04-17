@@ -46,13 +46,13 @@ const AboutPage = () => {
             <p className="about-hero-subtitle">
               Našou úlohou je kvalitná, rýchla a cenovo výhodná realizácia.
                Všetko s dôrazom na bezpečnosť, presný postup
-              a transparentnú komunikáciu. Sme členom <a
+              a transparentnú komunikáciu. Všetko pod <a
                                                                className="link-accent"
                                                                href="https://verejnyportal.sksi.sk/search/profile/16517"
                                                                target="_blank"
                                                                rel="noreferrer"
                                                              >
-                                                                SKSI
+                                                                odpborným riadením a kontrolou
                                                              </a>.
             </p>
             <div className="about-hero-actions">

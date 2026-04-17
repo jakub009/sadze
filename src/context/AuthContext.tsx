@@ -1,5 +1,10 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { MASTER_DEFAULT_PASSWORD, MASTER_USERS, UserRole } from "../config/auth";
+import {
+  MASTER_DEFAULT_PASSWORD,
+  MASTER_USERS,
+  REMOVED_USER_EMAILS,
+  UserRole,
+} from "../config/auth";
 
 type StoredUser = {
   email: string;
@@ -25,11 +30,16 @@ const SESSION_KEY = "sadze_session";
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
+const REMOVED_EMAILS = new Set(REMOVED_USER_EMAILS.map((email) => email.toLowerCase()));
+
+const filterRemovedUsers = (users: StoredUser[]) =>
+  users.filter((user) => !REMOVED_EMAILS.has(user.email.toLowerCase()));
+
 const loadUsers = (): StoredUser[] => {
   const raw = localStorage.getItem(USERS_KEY);
   if (!raw) return [];
   try {
-    return JSON.parse(raw) as StoredUser[];
+    return filterRemovedUsers(JSON.parse(raw) as StoredUser[]);
   } catch {
     return [];
   }
@@ -77,16 +87,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     seedMasters();
     const loadedUsers = loadUsers();
+    saveUsers(loadedUsers);
     setUsers(loadedUsers);
 
     const session = loadSession();
-    if (session) {
+    if (session && !REMOVED_EMAILS.has(session.email.toLowerCase())) {
       const sessionUser = loadedUsers.find(
         (item) => item.email.toLowerCase() === session.email.toLowerCase()
       );
       if (sessionUser) {
         setUser(sessionUser);
+      } else {
+        saveSession(null);
       }
+    } else {
+      saveSession(null);
     }
   }, []);
 

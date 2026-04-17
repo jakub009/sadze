@@ -1,13 +1,12 @@
 import type { CSSProperties } from "react";
 
-import heroFireImage from "../public/fireman-fire-fighting-evacuation-fire-drill-simulation-training-safety-condominium-factory.jpg";
-import heroFloodImage from "../public/natural-disaster.jpg";
+import heroFireImage from "../public/hero-fire-optimized.jpg";
+import heroFloodImage from "../public/hero-flood-optimized.jpg";
 
 const Hero = () => {
   const headlineLines = [
-    ["Rýchle"],
-    ["zásahy", "po", "požiari"],
-    ["aj", "vytopení"],
+    ["Odborné", "zásahy"],
+    ["po", "požiari", "aj", "vytopení"],
   ];
   const headline = headlineLines.flat().join(" ");
 
@@ -73,11 +72,31 @@ const Hero = () => {
               })()}
             </span>
           </h1>
+          <p className="hero-lead-mobile">
+            Transparentný postup, jasný plán a rýchla realizácia. Všetko pod
+            odborným{" "}
+            <a
+              className="link-accent"
+              href="https://verejnyportal.sksi.sk/search/profile/16517"
+              target="_blank"
+              rel="noreferrer"
+            >
+              riadením a kontrolou
+            </a>
+            .
+          </p>
           <p className="lead">
             Stabilizujeme situáciu okamžite. Zabezpečíme odsávanie vody, sanáciu,
             čistenie sadzí, odvlhčenie aj obnovu interiérov. Transparentný
-            postup, jasný plán a rýchla realizácia.
-          </p>
+            postup, jasný plán a rýchla realizácia. Všetko pod odborným <a
+                                                                                                                                    className="link-accent"
+                                                                                                                                    href="https://verejnyportal.sksi.sk/search/profile/16517"
+                                                                                                                                    target="_blank"
+                                                                                                                                    rel="noreferrer"
+                                                                                                                                  >
+                                                                                                                                     riadením a kontrolou
+                                                                                                                                  </a>
+          .</p>
           <div className="hero-actions">
             <a className="button" href="#kontakt">
               Odoslať formulár

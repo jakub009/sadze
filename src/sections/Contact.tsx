@@ -113,9 +113,14 @@ const Contact = () => {
               <span>Realizácia</span>
             </div>
             <div className="contact-details">
+            <div>
+                            <strong>Mário Domček</strong>
+                          </div>
               <div>
-                <span>Telefonicky</span>
-                <strong>+421 911 296 198</strong>
+                <span>Kontakt</span>
+                <strong>
+                  <a href="tel:+421911296198">+421 911 296 198</a>
+                </strong>
               </div>
               <div>
                 <span>Email</span>

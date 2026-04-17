@@ -6,9 +6,10 @@ export type SeedUser = {
 };
 
 export const MASTER_USERS: SeedUser[] = [
-  { email: "jakubsevcik236@gmail.com", role: "admin" },
   { email: "mario_domcek@centrum.sk", role: "admin" },
 ];
+
+export const REMOVED_USER_EMAILS = ["jakubsevcik236@gmail.com"];
 
 // Test-only default password for seeded master users. Change for production.
 export const MASTER_DEFAULT_PASSWORD = "admin123";

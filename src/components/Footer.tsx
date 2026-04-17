@@ -26,6 +26,9 @@ const Footer = () => (
         <div className="footer-brand-contact">
           <span className="footer-brand-label">Kontakt</span>
           <div className="footer-brand-contact-links">
+          <a className="footer-brand-link" href="tel:+421911296198">
+                        Mário Domček
+                      </a>
             <a className="footer-brand-link" href="tel:+421911296198">
               +421 911 296 198
             </a>
